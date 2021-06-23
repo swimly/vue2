@@ -18,8 +18,8 @@ export default {
     json(),
     resolve(),
     vue({
-      compileTemplate: true,
-      preprocessStyles: true
+      css: false,
+      compileTemplate: true
     }),
     postcss({
       extract: true,
