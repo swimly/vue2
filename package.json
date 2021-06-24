@@ -11,7 +11,9 @@
     "push:gitee": "git push gitee master",
     "push:github": "git push github master",
     "pull:gitee": "git pull gitee master",
-    "pull:github": "git pull github master"
+    "pull:github": "git pull github master",
+    "push": "concurrently \"yarn push:github\" \"yarn push:gitee\"",
+    "pull": "concurrently \"yarn pull:github\" \"yarn pull:gitee\""
   },
   "theme": "default",
   "keywords": [],
