@@ -7,7 +7,11 @@
     "dev": "cross-env ENV=development rollup -wc",
     "build": "cross-env ENV=producrion rollup -c rollup.config.prod.js",
     "doc": "start-storybook -p 3003",
-    "build:doc": "build-storybook"
+    "build:doc": "build-storybook",
+    "push:gitee": "git push gitee master",
+    "push:github": "git push github master",
+    "pull:gitee": "git pull gitee master",
+    "pull:github": "git pull github master"
   },
   "theme": "default",
   "keywords": [],
