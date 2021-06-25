@@ -7,6 +7,16 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="dist/mui.css">
+  <style>
+    .markdown-section h3{
+      font-size:1.2rem;
+      font-weight: normal;
+    }
+    .markdown-section a{
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
@@ -14,6 +24,7 @@
     window.$docsify = {
       name: '',
       repo: '',
+      executeScript: true,
       loadSidebar: "docs/_sidebar.md",
       alias: {
         "/src/components/.*/_sidebar.md": "docs/_sidebar.md",
@@ -22,5 +33,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="dist/mui.js"></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import MInput from './src/input.vue'
+
+<Meta
+  title="组件/MInput 按钮"
+/>
+
+## Input按钮
+
+
+<Story name='默认输入框' height='40px'>
+  {{
+    components: { MInput },
+    data: () => {
+      return {
+        v: 'aaa'
+      }
+    },
+    methods: {
+      onchange (data) {
+        console.log(data)
+      }
+    },
+    template: `
+      <div>
+        <h2>{{v}}</h2>
+        <m-input v-model="v" @vchange="onchange"></m-input>
+      </div>
+    `,
+  }}
+</Story>

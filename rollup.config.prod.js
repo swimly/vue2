@@ -21,9 +21,18 @@ export default () => {
     const isMain = name === pkg.name
     con.input = isMain ? `./index.js` : `./src/components/${name}/index.js`
     con.output = [{
+      exports: 'auto',
       file: isMain ? `dist/${name}.min.js` : `src/components/${name}/dist/${name}.min.js`,
       format: 'umd',
       name
+    }, {
+      exports: 'auto',
+      file: isMain ? `dist/${name}.cjs.min.js` : `src/components/${name}/dist/${name}.cjs.min.js`,
+      format: 'cjs'
+    }, {
+      exports: 'auto',
+      file: isMain ? `dist/${name}.es.min.js` : `src/components/${name}/dist/${name}.es.min.js`,
+      format: 'es'
     }]
     configs.push(con)
   })

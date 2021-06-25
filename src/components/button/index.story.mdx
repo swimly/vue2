@@ -5,14 +5,62 @@ import MButton from './src/button.vue'
   title="组件/MButton 按钮"
 />
 
-## button
+## Button按钮
+
+按钮用于开始一个即时操作。
+
+### 按钮类型
+
+按钮有五种类型：`default`，`primary`，`warning`，`success`，`danger`，默认是：`default`。
 
 <Story name='默认按钮' height='40px'>
   {{
     components: { MButton },
     template: `
       <div>
-        <m-button>vue按钮</m-button>
+        <m-button type="default">按钮</m-button>
+        <m-button type="primary">按钮</m-button>
+        <m-button type="warning">按钮</m-button>
+        <m-button type="success">按钮</m-button>
+        <m-button type="danger">按钮</m-button>
+      </div>
+    `,
+  }}
+</Story>
+
+### 线条按钮
+
+通过`outline`控制线条模式按钮。
+
+<Story name='线条按钮' height='40px'>
+  {{
+    components: { MButton },
+    template: `
+      <div>
+        <m-button type="default" outline>按钮</m-button>
+        <m-button type="primary" outline>按钮</m-button>
+        <m-button type="warning" outline>按钮</m-button>
+        <m-button type="success" outline>按钮</m-button>
+        <m-button type="danger" outline>按钮</m-button>
+      </div>
+    `,
+  }}
+</Story>
+
+### 朴素按钮
+
+通过`plain`控制朴素按钮。
+
+<Story name='朴素按钮' height='40px'>
+  {{
+    components: { MButton },
+    template: `
+      <div>
+        <m-button type="default" plain>按钮</m-button>
+        <m-button type="primary" plain>按钮</m-button>
+        <m-button type="warning" plain>按钮</m-button>
+        <m-button type="success" plain>按钮</m-button>
+        <m-button type="danger" plain>按钮</m-button>
       </div>
     `,
   }}

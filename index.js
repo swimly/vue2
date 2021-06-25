@@ -1,10 +1,16 @@
-import MButton from './src/components/button/src/button.vue'
+import MButton from './src/components/button'
+import MRow from './src/components/row'
+import MCol from './src/components/col'
+import MIcon from './src/components/icon'
 
 const components = [
-  MButton
+  MButton,
+  MRow,
+  MCol,
+  MIcon
 ]
 
-const install = (Vue) => {
+const install = function (Vue) {
   components.forEach(com => {
     Vue.component(com.name, com)
   })

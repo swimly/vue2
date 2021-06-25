@@ -1,0 +1,13 @@
+.m-col{
+  display:inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-size: 16px;
+  &[type=table]{
+    display:table-cell;
+    vertical-align: middle;
+  }
+  &[type=flex]{
+    display:block;
+  }
+}
