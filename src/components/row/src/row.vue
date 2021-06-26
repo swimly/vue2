@@ -14,6 +14,13 @@
 <script>
 export default {
   name: 'm-row',
+  provide () {
+    return {
+      gutter: this.gutter,
+      wrap: this.wrap,
+      type: this.type
+    }
+  },
   props: {
     wrap: {
       type: Boolean,
@@ -24,8 +31,8 @@ export default {
       default: ''
     },
     gutter: {
-      type: Number,
-      default: 12
+      type: Number | String,
+      default: 16
     }
   },
   created () {

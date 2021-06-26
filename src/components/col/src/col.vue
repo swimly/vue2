@@ -4,8 +4,7 @@
     :wrap="wrap"
     :type="type"
     :style="`
-      width:${100/24*span}%;
-      ${paved ? type==='flex' ? 'flex:1;' : 'width:100%;' : 'white-space:wrap;'}
+      width:${100/24*span}%;padding:${gutter/2}px;
     `"
   >
     <slot/>
@@ -15,6 +14,7 @@
 <script>
 export default {
   name: 'm-col',
+  inject: ['gutter', 'wrap', 'type'],
   props: {
     span: {
       type: Number,
@@ -26,18 +26,9 @@ export default {
     }
   },
   computed: {
-    wrap () {
-      return this.$parent.wrap
-    },
-    type () {
-      return this.$parent.type
-    },
-    gutter () {
-      return this.$parent.gutter
-    }
   },
   created () {
-    console.log(this.wrap)
+    console.log(this.gutter)
   }
 }
 </script>

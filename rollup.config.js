@@ -9,6 +9,7 @@ import preImport from 'postcss-prepend-imports'
 import cssnano from 'cssnano'
 import progress from 'rollup-plugin-progress'
 import image from '@rollup/plugin-image'
+import filesize from 'rollup-plugin-filesize'
 
 const env = process.env.ENV
 const isDev = env === 'development'
@@ -45,15 +46,19 @@ export default {
     resolve(),
     vue({
       css: false,
-      compileTemplate: true
+      compileTemplate: true,
+      preprocessStyles: (res) => {
+        console.log(res)
+      }
     }),
+    filesize(),
     postcss({
       extract: true,
       plugins: postcssConfig.plugins
     }),
     !isDev && terser(),
     progress({
-      clearLine: true
+      clearLine: false
     }),
     image()
   ],

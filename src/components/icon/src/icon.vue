@@ -21,7 +21,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#333'
+      default: ''
     },
     spin: {
       type: Boolean,

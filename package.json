@@ -15,7 +15,7 @@
     "push": "concurrently \"yarn push:github\" \"yarn push:gitee\"",
     "pull": "concurrently \"yarn pull:github\" \"yarn pull:gitee\"",
     "dev": "concurrently \"yarn doc\" \"yarn build:dev\"",
-    "addc": "plop"
+    "generate": "plop"
   },
   "theme": "default",
   "keywords": [],
@@ -41,6 +41,7 @@
     "cross-env": "^7.0.3",
     "css-color-converter": "^2.0.0",
     "cssnano": "^5.0.6",
+    "filesize": "^6.3.0",
     "plop": "^2.7.4",
     "postcss": "^8.1.9",
     "postcss-color-mod-function": "^3.0.3",
@@ -54,6 +55,7 @@
     "postcss-simple-vars": "^5.0.2",
     "rollup": "^2.52.2",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^4.0.0",
