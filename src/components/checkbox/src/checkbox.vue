@@ -1,6 +1,6 @@
 <template>
   <div class="m-checkbox">
-    {{isCheck}}
+    333555777
   </div>
 </template>
 

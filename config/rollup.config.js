@@ -10,7 +10,7 @@ import progress from 'rollup-plugin-progress'
 import image from '@rollup/plugin-image'
 import filesize from 'rollup-plugin-filesize'
 import typescript from 'rollup-plugin-typescript'
-import css from 'rollup-plugin-css-only'
+// import css from 'rollup-plugin-css-only'
 
 export default (name, env) => {
   const isEntry = name === pkg.ui
@@ -37,7 +37,7 @@ export default (name, env) => {
       json(),
       resolve(),
       commonjs(),
-      css(),
+      // css(),
       typescript({
         tsconfig: false,
         experimentalDecorators: true,
