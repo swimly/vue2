@@ -1,0 +1,1 @@
+.m-icon{display:inline-block;font-size:0}.m-icon svg{height:100%;width:100%}.m-icon[spin]{-webkit-animation:iconrotate 1s linear infinite;animation:iconrotate 1s linear infinite}@-webkit-keyframes iconrotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes iconrotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}

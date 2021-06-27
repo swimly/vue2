@@ -1,0 +1,14 @@
+.m-col{
+  display:inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+.m-col[type=table]{
+    display:table-cell;
+    vertical-align: middle;
+  }
+.m-col[type=flex]{
+    display:block;
+  }

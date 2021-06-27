@@ -1,0 +1,24 @@
+.m-icon{
+  display:inline-block;
+  font-size:0;
+}
+.m-icon svg{
+    width:100%;
+    height:100%;
+  }
+.m-icon[spin]{
+    -webkit-animation: iconrotate 1s linear infinite;
+            animation: iconrotate 1s linear infinite;
+  }
+@-webkit-keyframes iconrotate {
+  to{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes iconrotate {
+  to{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

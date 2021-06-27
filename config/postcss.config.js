@@ -1,6 +1,6 @@
-const functions = require('./src/utils/postcss.function.js')
-const pkg = require('./package.json')
-module.exports = () => {
+const functions = require('../src/utils/postcss.function.js')
+const pkg = require('../package.json')
+module.exports = (isDev) => {
   return {
     plugins: [
       require('postcss-prepend-imports')({
@@ -24,7 +24,8 @@ module.exports = () => {
       require('postcss-functions')({
         functions
       }),
-      require('postcss-simple-vars')()
+      require('postcss-simple-vars')(),
+      !isDev && require('cssnano')
     ]
   }
 }

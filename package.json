@@ -1,11 +1,12 @@
 {
   "name": "mui",
+  "ui": "MUI",
   "version": "1.0.0",
   "description": "",
   "main": "dist/mui.min.js",
   "scripts": {
-    "build:dev": "cross-env ENV=development rollup -wc",
-    "build": "cross-env ENV=producrion rollup -c rollup.config.prod.js",
+    "build:dev": "cross-env ENV=development rollup -wc ./config/rollup.config.dev.js",
+    "build:prod": "cross-env ENV=producrion rollup -c ./config/rollup.config.prod.js",
     "doc": "start-storybook -p 3003",
     "build:doc": "build-storybook",
     "push:gitee": "git push gitee master",
@@ -15,7 +16,7 @@
     "push": "concurrently \"yarn push:github\" \"yarn push:gitee\"",
     "pull": "concurrently \"yarn pull:github\" \"yarn pull:gitee\"",
     "dev": "concurrently \"yarn doc\" \"yarn build:dev\"",
-    "generate": "plop"
+    "generate": "plop --plopfile ./config/plopfile.js"
   },
   "theme": "default",
   "keywords": [],
