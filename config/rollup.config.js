@@ -2,18 +2,21 @@ import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import {terser} from 'rollup-plugin-terser'
+import commonjs from 'rollup-plugin-commonjs'
 import vue from 'rollup-plugin-vue'
 const postcssConfig = require('./postcss.config')
 import pkg from '../package.json'
 import progress from 'rollup-plugin-progress'
 import image from '@rollup/plugin-image'
 import filesize from 'rollup-plugin-filesize'
+import typescript from 'rollup-plugin-typescript'
+import css from 'rollup-plugin-css-only'
 
 export default (name, env) => {
   const isEntry = name === pkg.ui
   const isDev = env === 'dev'
   const root = isEntry ? './src/' : './src/components/'
-  const input = isEntry ? `${root}index.js` : `${root}${name}/index.js`
+  const input = isEntry ? `${root}index.ts` : `${root}${name}/index.ts`
   const outputRoot = isEntry ? './' : `./src/components/${name}/`
   const postcssPlugins = postcssConfig(isDev).plugins
   const formats = ['umd']
@@ -33,9 +36,19 @@ export default (name, env) => {
     plugins: [
       json(),
       resolve(),
+      commonjs(),
+      css(),
+      typescript({
+        tsconfig: false,
+        experimentalDecorators: true,
+        module: 'es2015'
+      }),
       vue({
         css: false,
         compileTemplate: true,
+        defaultLang: {
+          script: 'ts'
+        },
         preprocessStyles: (res) => {
           console.log(res)
         }
