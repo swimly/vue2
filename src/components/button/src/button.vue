@@ -29,6 +29,10 @@ export default {
       type: String,
       default: ''
     }
+  },
+  created () {
+    const a = '1'
+    console.log(a)
   }
 }
 </script>

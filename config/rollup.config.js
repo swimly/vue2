@@ -11,6 +11,7 @@ import image from '@rollup/plugin-image'
 import filesize from 'rollup-plugin-filesize'
 import typescript from 'rollup-plugin-typescript'
 // import css from 'rollup-plugin-css-only'
+import babel from 'rollup-plugin-babel'
 
 export default (name, env) => {
   const isEntry = name === pkg.ui
@@ -34,15 +35,6 @@ export default (name, env) => {
     input,
     output,
     plugins: [
-      json(),
-      resolve(),
-      commonjs(),
-      // css(),
-      typescript({
-        tsconfig: false,
-        experimentalDecorators: true,
-        module: 'es2015'
-      }),
       vue({
         css: false,
         compileTemplate: true,
@@ -53,16 +45,29 @@ export default (name, env) => {
           console.log(res)
         }
       }),
+      json(),
+      resolve(),
+      commonjs(),
+      // css(),
+      typescript({
+        tsconfig: false,
+        experimentalDecorators: true,
+        module: 'es2015'
+      }),
       postcss({
         extract: true,
         plugins: postcssPlugins
+      }),
+      babel({
+        exclude: ['node_modules/**'],
+        runtimeHelpers: true
       }),
       image(),
       !isDev && filesize(),
       !isDev && progress({
         clearLine: false
       }),
-      !isDev && terser()
+      // !isDev && terser()
     ],
     external: [
       'vue'
