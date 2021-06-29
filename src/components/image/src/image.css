@@ -1,0 +1,10 @@
+.m-image{
+  display:inline-block;
+  vertical-align: middle;
+  position: relative;
+  &-preview{
+    background: v(background-regular);
+    height: 32px;
+    width: 350px;
+  }
+}

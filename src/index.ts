@@ -9,6 +9,10 @@ import MRadio from './components/radio'
 import MRadioGroup from './components/radio-group'
 import MCheckbox from './components/checkbox'
 import MCheckboxGroup from './components/checkbox-group'
+import MPage from './components/page'
+import MMenu from './components/menu'
+import MImage from './components/image'
+import MScroller from './components/scroller'
 
 const components = [
   MButton,
@@ -21,7 +25,11 @@ const components = [
   MRadio,
   MRadioGroup,
   MCheckbox,
-  MCheckboxGroup
+  MCheckboxGroup,
+  MPage,
+  MMenu,
+  MImage,
+  MScroller
 ]
 
 const install = function (Vue) {
