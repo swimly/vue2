@@ -59,15 +59,24 @@ export default (name, env) => {
         plugins: postcssPlugins
       }),
       babel({
-        exclude: ['node_modules/**'],
-        runtimeHelpers: true
+        exclude: [/\/core-js\//],
+        runtimeHelpers: true,
+        extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue'],
+        presets: [
+          ["@babel/preset-env", {
+            modules: false,
+            useBuiltIns: false,
+            forceAllTransforms: true
+          }],
+          "@babel/preset-typescript"
+        ]
       }),
       image(),
       !isDev && filesize(),
       !isDev && progress({
         clearLine: false
       }),
-      // !isDev && terser()
+      !isDev && terser()
     ],
     external: [
       'vue'

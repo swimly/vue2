@@ -16,13 +16,30 @@ export default {
     value: {
       type: Array,
       default: []
+    },
+    size: {
+      type: String | Number,
+      default: 18
     }
   },
   data () {
     return {
       data: {
-        value: this.value
+        value: this.value,
+        size: this.size
       }
+    }
+  },
+  methods: {
+    onChange (value, status) {
+      let values = this.value
+      if (status) {
+        values.push(value)
+      } else {
+        const index = values.indexOf(value)
+        values.splice(index, 1)
+      }
+      this.$emit('input', values)
     }
   }
 }

@@ -3,6 +3,7 @@
   vertical-align: middle;
   position:relative;
   font-size:0;
+  margin-right:8px;
   &-frame{
     display:inline-block;
     width: 18px;
