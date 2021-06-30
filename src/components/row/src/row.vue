@@ -3,6 +3,8 @@
     class="m-row"
     :wrap="wrap"
     :type="type"
+    :direction="direction"
+    ref="row"
     :style="`
       margin: ${-gutter/2}px;
     `"
@@ -12,6 +14,7 @@
 </template>
 
 <script>
+import elementResizeDetectorMaker from 'element-resize-detector'
 export default {
   name: 'm-row',
   provide () {
@@ -32,7 +35,44 @@ export default {
     },
     gutter: {
       type: Number | String,
-      default: 16
+      default: 0
+    },
+    direction: {
+      type: String,
+      default: 'vertical'
+    },
+    async: {
+      type: Boolean,
+      default: false
+    }
+  },
+  mounted () {
+    this.asyncRender()
+  },
+  methods: {
+    asyncRender () {
+      if (!this.async || this.type) return false
+      const erd = elementResizeDetectorMaker({
+        strategy: 'scroll',
+        callOnAdd: true
+      })
+      erd.listenTo(this.$refs.row, (el) => {
+        const height = el.offsetHeight
+        let other = 0
+        let pavedDom = null
+        const cols = el.childNodes
+        cols.forEach((col) => {
+          if (col.className && col.className.indexOf('m-col') >= 0) {
+            const paved = col.getAttribute('paved')
+            if (paved === null) {
+              other += col.offsetHeight
+            } else {
+              pavedDom = col
+            }
+          }
+        })
+        pavedDom.style.height = `${height - other}px`
+      })
     }
   },
   created () {

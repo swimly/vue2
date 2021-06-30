@@ -61,12 +61,8 @@ export default {
     contentStyle () {
       const barwidth = this.scrollBarWidth
       let style = {}
-      if (this.hasY) {
-        style.marginRight = `${-barwidth}px`
-      }
-      if (this.hasX) {
-        style.marginBottom = `${-barwidth}px`
-      }
+      style.marginRight = `${-barwidth}px`
+      style.marginBottom = `${-barwidth}px`
       return style
     }
   },

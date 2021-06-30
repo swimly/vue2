@@ -3,7 +3,8 @@
   height:100%;
   position:relative;
   &-content{
-    overflow:auto;
+    overflow:scroll;
+    scroll-behavior: smooth;
     position:absolute;
     top:0;
     left:0;

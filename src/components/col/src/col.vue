@@ -3,6 +3,7 @@
     class="m-col"
     :wrap="wrap"
     :type="type"
+    :paved="paved"
     :style="`
       width:${100/24*span}%;padding:${gutter/2}px;
     `"

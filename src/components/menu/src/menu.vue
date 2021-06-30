@@ -3,7 +3,8 @@
     <li class="m-menu-item" v-for="(item, index) in value" :key="index">
       <div class="m-menu-handle">
         <span class="m-menu-prefix">
-          <img src="../../../assets/menu1.png" alt="" class="m-menu-icon">
+          <img v-if="item.defaultIcon" :src="item.defaultIcon" alt="" class="m-menu-icon">
+          <!-- <img v-if="item.activeIcon" :src="item.activeIcon" alt="" class="m-menu-icon"> -->
         </span>
         <span class="m-menu-label">{{item.label}}</span>
         <span class="m-menu-suffix">
@@ -12,7 +13,9 @@
           </span>
         </span>
       </div>
-      <div class="m-menu-content"></div>
+      <div class="m-menu-content" v-if="item.children">
+        <m-menu :value="item.children"></m-menu>
+      </div>
     </li>
   </ul>
 </template>

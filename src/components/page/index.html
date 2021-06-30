@@ -12,6 +12,38 @@
 <body>
   <div id="app">
     <m-page shape="modern" :data="pageData">
+      <m-row :async="true">
+        <m-col>
+          <m-panel>
+            <m-form label-position="left">
+              <m-form-item :span="6" label="用户名">
+                <m-input></m-input>
+              </m-form-item>
+              <m-form-item :span="6" label="用户名">
+                <m-input></m-input>
+              </m-form-item>
+              <m-form-item :span="6" label="用户名">
+                <m-input></m-input>
+              </m-form-item>
+              <m-form-item :span="6" label="用户名">
+                <m-input></m-input>
+              </m-form-item>
+            </m-form>
+          </m-panel>
+        </m-col>
+        <m-col paved>
+          <m-panel></m-panel>
+        </m-col>
+        <m-col>
+          <m-panel>
+            <m-row>
+              <m-col align="right">
+                <m-pagination :current-page="1" :total="1000"></m-pagination>
+              </m-col>
+            </m-row>
+          </m-panel>
+        </m-col>
+      </m-row>
     </m-page>
   </div>
   <script src="../../../node_modules/vue/dist//vue.min.js"></script>
@@ -49,13 +81,13 @@
               label: '系统配置'
             }],
             menu: [{
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '首页',
               url: '/'
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '个人办公',
               url: '/',
               children: [{
@@ -114,8 +146,8 @@
                 }]
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '项目管理',
               url: '/',
               children: [{
@@ -138,8 +170,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '人力资源',
               url: '/',
               children: [{
@@ -162,8 +194,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '客户管理',
               url: '/',
               children: [{
@@ -177,8 +209,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '内部邮件',
               url: '/',
               children: [{
@@ -198,8 +230,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '学习交流',
               url: '/'
             }, {
@@ -208,13 +240,13 @@
               label: '我的文档',
               url: '/'
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '工作圈',
               url: '/'
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '会议系统',
               url: '/',
               children: [{
@@ -231,8 +263,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '日程管理',
               url: '/',
               children: [{
@@ -249,8 +281,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '系统配置',
               url: '/',
               children: [{
@@ -267,8 +299,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '问卷调查',
               url: '/',
               children: [{
@@ -285,8 +317,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '规范文档',
               url: '/',
               children: [{
@@ -303,8 +335,8 @@
                 url: ''
               }]
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '总裁信箱',
               url: '/'
             }]

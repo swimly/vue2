@@ -22,6 +22,7 @@
   &-suffix{
     white-space: nowrap;
     color:inherit;
+    font-size:0;
     & > span{
       display:inline-block;
       min-width: 20px;
@@ -34,7 +35,13 @@
   }
   &-icon{
     vertical-align: middle;
-    width: 22px;
+    width: 16px;
     margin-right: 8px;
+  }
+  &-content{
+    padding-left:24px;
+    .m-menu-handle{
+      height:40px;
+    }
   }
 }

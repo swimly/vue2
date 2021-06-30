@@ -9,5 +9,8 @@
   }
   &[type=flex]{
     display:block;
+    &[paved]{
+      flex:1;
+    }
   }
 }
