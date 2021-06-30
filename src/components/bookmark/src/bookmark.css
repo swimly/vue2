@@ -1,0 +1,87 @@
+.m-bookmark{
+  display:block;
+  width:100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  position:relative;
+  height: 100%;
+  color:inherit;
+  &-prefix,
+  &-content,
+  &-suffix{
+    display:inline-block;
+    vertical-align: middle;
+    height:100%;
+    box-sizing: border-box;
+  }
+  &-suffix,
+  &-prefix{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &::before{
+      content:"";
+      display:inline-block;
+      width:0;
+      height:100%;
+      vertical-align: middle;
+    }
+    span {
+      vertical-align: middle;
+      margin-left:8px;
+      cursor: pointer;
+      color: v(text-secondary);
+      cursor: pointer;
+      &:hover{
+        color:v(color-primary);
+      }
+    }
+  }
+  &-content{
+    width:100%;
+    overflow:hidden;
+  }
+  &-list{
+    font-size:0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    white-space: nowrap;
+    height:100%;
+    display:inline-block;
+  }
+  &-item{
+    display:inline-block;
+    vertical-align: middle;
+    padding:0 12px;
+    box-sizing: border-box;
+    border:1px solid v(border-default);
+    border-bottom:none;
+    margin-right: 8px;
+    border-radius: 2px 2px 0 0;
+    cursor: pointer;
+    min-width: 80px;
+    text-align:center;
+    &:before{
+      content:"";
+      display:inline-block;
+      width:0;
+      height:100%;
+      vertical-align: middle;
+    }
+    &[active]{
+      border-color:v(color-primary);
+      color: v(color-primary);
+    }
+  }
+  &-label{
+    font-size: 14px;
+    color:inherit;
+    font-weight: normal;
+    display:inline-block;
+    vertical-align: middle;
+    margin:0;
+    line-height:1;
+    margin-right:8px;
+  }
+}

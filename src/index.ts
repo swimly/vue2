@@ -13,6 +13,7 @@ import MPage from './components/page'
 import MMenu from './components/menu'
 import MImage from './components/image'
 import MScroller from './components/scroller'
+import MBookmark from './components/bookmark'
 
 const components = [
   MButton,
@@ -29,7 +30,8 @@ const components = [
   MPage,
   MMenu,
   MImage,
-  MScroller
+  MScroller,
+  MBookmark
 ]
 
 const install = function (Vue) {

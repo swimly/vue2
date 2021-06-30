@@ -10,6 +10,12 @@
     right:0;
     bottom:0;
     z-index:1;
+    box-sizing: border-box;
+  }
+  &-wrap{
+    position:absolute;
+    top:0;
+    left:0;
   }
   &-bar{
     position:absolute;
@@ -21,6 +27,7 @@
       display:inline-block;
       background-color:rgba(0,0,0,0.3);
       border-radius: 3px;
+      position:absolute;
     }
     &.y{
       width: 6px;

@@ -4,35 +4,36 @@
     :y="hasY"
     :x="hasX"
   >
-    <div class="m-scroller-bar y" v-if="hasY">
+    <div class="m-scroller-bar y" v-if="hasY" :style="{width: `${barWidth}px`}">
       <div
         class="m-scroller-bar-handle"
-        :style="handleStyle('barY')"
-        ref="y"
-        :value="bar.Y"
+        :style="`background-color:${barColor};width:100%;`"
+        ref="barY"
       ></div>
     </div>
-    <div class="m-scroller-bar x" v-if="hasX">
+    <div class="m-scroller-bar x" v-if="hasX" :style="{height: `${barWidth}px`}">
       <div
         class="m-scroller-bar-handle"
-        :style="handleStyle('barX')"
-        ref="x"
-        :value="bar.X"
+        :style="`background-color:${barColor};height:100%;`"
+        ref="barX"
       ></div>
     </div>
     <div
       class="m-scroller-content"
-      :style="contentStyle"
       ref="content"
+      :style="contentStyle"
       @scroll="onScroll"
     >
-      <slot></slot>
+      <div class="m-scroller-wrap">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import utils from '../../../utils'
+import elementResizeDetectorMaker from 'element-resize-detector'
 export default {
   name: 'm-scroller',
   props: {
@@ -43,6 +44,14 @@ export default {
     scrollLeft: {
       type: Number,
       default: 0
+    },
+    barWidth: {
+      type: Number | String,
+      default: 4
+    },
+    barColor: {
+      type: String,
+      default: 'rgba(0,0,0,0.3)'
     }
   },
   computed: {
@@ -50,13 +59,13 @@ export default {
       return utils.getScrollBarWidth()
     },
     contentStyle () {
+      const barwidth = this.scrollBarWidth
       let style = {}
-      const value = `${-this.scrollBarWidth}px`
       if (this.hasY) {
-        style.marginRight = value
+        style.marginRight = `${-barwidth}px`
       }
       if (this.hasX) {
-        style.marginBottom = value
+        style.marginBottom = `${-barwidth}px`
       }
       return style
     }
@@ -65,76 +74,99 @@ export default {
     return {
       hasY: false,
       hasX: false,
-      barY: null,
       barX: null,
-      content: null,
-      size: {},
-      scroll: {
-        y: this.scrollTop,
-        x: this.scrollLeft
+      barY: null,
+      scale: {
+        y: 0,
+        x: 0
       },
-      bar: {
-        X: 0,
-        Y: 0
+      maxS: {
+        y: 0,
+        x: 0
+      },
+      maxB: {
+        y: 0,
+        x: 0
       }
     }
   },
   mounted () {
-    this.computedSize()
-    this.$nextTick(() => {
-      this.barY = this.$refs.y
-      this.barX = this.$refs.x
-      this.size = {
-        h: this.content.parentNode.offsetHeight,
-        sh: this.content.scrollHeight,
-        w: this.content.parentNode.offsetWidth,
-        sw: this.content.scrollWidth
-      }
+    const erd = elementResizeDetectorMaker({
+      strategy: 'scroll',
+      callOnAdd: true
+    })
+    erd.listenTo(this.$refs.content.childNodes[0], (el) => {
+      const width = el.parentNode.offsetWidth
+      const height = el.parentNode.offsetHeight
+      const swidth = el.offsetWidth
+      const sheight = el.offsetHeight
+      this.computedSize({w:width,h:height,sw:swidth,sh:sheight})
+      this.$nextTick(() => {
+        this.barY = this.$refs.barY
+        this.barX = this.$refs.barX
+        if (this.barY) {
+          this.barY.style.height = `${height * this.scale.y}px`
+          this.maxB.y = this.barY.parentNode.offsetHeight - this.barY.offsetHeight
+        }
+        if (this.barX) {
+          this.barX.style.width = `${width * this.scale.x}px`
+          this.maxB.x = this.barX.parentNode.offsetWidth - this.barX.offsetWidth
+        }
+      })
     })
   },
   created () {
   },
   methods: {
     onScroll () {
-      this.scroll = {
-        y: this.content.scrollTop,
-        x: this.content.scrollLeft
+      const scrolltop = this.content.scrollTop
+      const scrollleft = this.content.scrollLeft
+      const ms = {
+        y: scrolltop / this.maxS.y,
+        x: scrollleft / this.maxS.x
       }
-      this.$forceUpdate()
-    },
-    handleStyle (s) {
-      const bar = this[s]
-      let {w,sw,h,sh} = this.size
-      if (!bar) return false;
-      let scale = s === 'barY' ? h / sh : w / sw
-      const size = s === 'barY' ? 'height' : 'width'
-      const pos = s === 'barY' ? 'Y' : 'X'
-      const value = s === 'barY' ? scale * h : scale * w
-      const max = s === 'barY' ? sh - h : sw - w
-      const maxB = s === 'barY' ? h - value : w - value
-      const percent = s === 'barY' ? this.scroll.y / max : this.scroll.x / max
-      this.bar[pos] = percent * maxB
-      return {
-        [size]: `${value}px`,
-        transform: `translate${pos}(${percent * maxB}px)`
+      if (this.barY) {
+        this.barY.style.top = `${this.maxB.y * ms.y}px`
+      }
+      if (this.barX) {
+        this.barX.style.left = `${this.maxB.x * ms.x}px`
       }
     },
-    computedSize () {
-      const $content = this.$refs.content
-      const sw = $content.scrollWidth
-      const sh = $content.scrollHeight
-      const w = $content.offsetWidth
-      const h = $content.offsetHeight
-      if (sh > h && sw < w) {
+    computedSize (obj) {
+      const $c = this.$refs.content
+      const {w,h,sw,sh} = obj
+      if (sh > h && this.scrollBarWidth) {
+        this.maxS.y = sh - h
+        this.scale.y = h / sh
         this.hasY = true
-      } else if (sw > w && sh < h) {
-        this.hasX = true
-      } else if (sw > w && sh > h) {
-        this.hasY = true
-        this.hasX = true
+      } else {
+        this.hasY = false
       }
-      this.content = $content
+      if (sw > w && this.scrollBarWidth) {
+        this.maxS.x = sw - w
+        this.scale.x = w / sw
+        this.hasX = true
+      } else {
+        this.hasX = false
+      }
+      this.content = $c
+      this.$nextTick(() => {
+        this.content.scrollTop = this.scrollTop
+        this.content.scrollLeft = this.scrollLeft
+      })
+    },
+    onScrollLeft (v) {
+      let value = v >= this.maxS.x ? this.maxS.x : v
+      this.content.scrollLeft = value
+    },
+    onScrollTop (v) {
+      let value = v >= this.maxS.y ? this.maxS.y : v
+      this.content.scrollTop = value
     }
+  },
+  watch: {
+    'scrollLeft': 'onScrollLeft',
+    'scrollTop': 'onScrollTop'
   }
 }
 </script>

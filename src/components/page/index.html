@@ -11,9 +11,7 @@
 
 <body>
   <div id="app">
-    <m-page shape="modern">
-      <m-menu slot="menu-content" v-model="menu"></m-menu>
-      <m-image src="header-prefix" slot="header-prefix"></m-image>
+    <m-page shape="modern" :data="pageData">
     </m-page>
   </div>
   <script src="../../../node_modules/vue/dist//vue.min.js"></script>
@@ -23,52 +21,174 @@
       el: '#app',
       data: function () {
         return {
-          menu: [{
-            defaultIcon: '',
-            activeIcon: '',
-            label: '首页',
-            url: '/'
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '个人办公',
-            url: '/',
-            children: [{
-              label: '新增工作',
+          pageData: {
+            logl: 'https://pm.longrise.cn/LPOM/LEAP/SharedLib/c78357cd0b4b432d9c135a741e15c2bf/logo3.png',
+            bookmark: [{
+              label: '首页'
+            }, {
+              label: '个人办公'
+            }, {
+              label: '项目管理'
+            }, {
+              label: '人力资源'
+            }, {
+              label: '客户管理'
+            }, {
+              label: '内部邮件'
+            }, {
+              label: '学习交流'
+            }, {
+              label: '我的文档'
+            }, {
+              label: '工作圈'
+            }, {
+              label: '会议系统'
+            }, {
+              label: '日程管理'
+            }, {
+              label: '系统配置'
+            }],
+            menu: [{
+              defaultIcon: '',
+              activeIcon: '',
+              label: '首页',
               url: '/'
             }, {
-              label: '我的工作',
+              defaultIcon: '',
+              activeIcon: '',
+              label: '个人办公',
               url: '/',
               children: [{
-                label: '我的待办',
+                label: '新增工作',
+                url: '/'
+              }, {
+                label: '我的工作',
+                url: '/',
+                children: [{
+                  label: '我的待办',
+                  url: ''
+                }, {
+                  label: '我的在办',
+                  url: ''
+                }, {
+                  label: '我的已办',
+                  url: ''
+                }, {
+                  label: '我的挂起',
+                  url: ''
+                }, {
+                  label: '我经手',
+                  url: ''
+                }, {
+                  label: '我发起',
+                  url: ''
+                }]
+              }, {
+                label: '综合待办',
+                url: '/'
+              }, {
+                label: '通知公告',
+                url: '/',
+                children: [{
+                  label: '发送列表',
+                  url: ''
+                }, {
+                  label: '接收列表',
+                  url: ''
+                }, {
+                  label: '草稿箱',
+                  url: ''
+                }, {
+                  label: '回收站',
+                  url: ''
+                }]
+              }, {
+                label: '个人设置',
+                url: '/',
+                children: [{
+                  label: '委托代理',
+                  url: ''
+                }, {
+                  label: '个人分组',
+                  url: ''
+                }]
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '项目管理',
+              url: '/',
+              children: [{
+                label: '项目清单',
                 url: ''
               }, {
-                label: '我的在办',
+                label: '项目监控',
                 url: ''
               }, {
-                label: '我的已办',
+                label: '过程管理',
                 url: ''
               }, {
-                label: '我的挂起',
+                label: '任务管理',
                 url: ''
               }, {
-                label: '我经手',
+                label: '文档管理',
                 url: ''
               }, {
-                label: '我发起',
+                label: '采购管理',
                 url: ''
               }]
             }, {
-              label: '综合待办',
-              url: '/'
-            }, {
-              label: '通知公告',
+              defaultIcon: '',
+              activeIcon: '',
+              label: '人力资源',
               url: '/',
               children: [{
-                label: '发送列表',
+                label: '新增工作',
                 url: ''
               }, {
-                label: '接收列表',
+                label: '入职指引',
+                url: ''
+              }, {
+                label: '打卡记录',
+                url: ''
+              }, {
+                label: '考勤管理',
+                url: ''
+              }, {
+                label: '员工考勤地点',
+                url: ''
+              }, {
+                label: '加班调休数据统计',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '客户管理',
+              url: '/',
+              children: [{
+                label: '客户管理',
+                url: ''
+              }, {
+                label: '客户批注',
+                url: ''
+              }, {
+                label: '客户会议',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '内部邮件',
+              url: '/',
+              children: [{
+                label: '写邮件',
+                url: ''
+              }, {
+                label: '已发邮件',
+                url: ''
+              }, {
+                label: '收件箱',
                 url: ''
               }, {
                 label: '草稿箱',
@@ -78,211 +198,117 @@
                 url: ''
               }]
             }, {
-              label: '个人设置',
+              defaultIcon: '',
+              activeIcon: '',
+              label: '学习交流',
+              url: '/'
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '我的文档',
+              url: '/'
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '工作圈',
+              url: '/'
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '会议系统',
               url: '/',
               children: [{
-                label: '委托代理',
+                label: '我的会议',
                 url: ''
               }, {
-                label: '个人分组',
+                label: '会议通知',
+                url: ''
+              }, {
+                label: '会议室管理',
+                url: ''
+              }, {
+                label: '会议记录',
                 url: ''
               }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '日程管理',
+              url: '/',
+              children: [{
+                label: '我的会议',
+                url: ''
+              }, {
+                label: '会议通知',
+                url: ''
+              }, {
+                label: '会议室管理',
+                url: ''
+              }, {
+                label: '会议记录',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '系统配置',
+              url: '/',
+              children: [{
+                label: '我的会议',
+                url: ''
+              }, {
+                label: '会议通知',
+                url: ''
+              }, {
+                label: '会议室管理',
+                url: ''
+              }, {
+                label: '会议记录',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '问卷调查',
+              url: '/',
+              children: [{
+                label: '我的会议',
+                url: ''
+              }, {
+                label: '会议通知',
+                url: ''
+              }, {
+                label: '会议室管理',
+                url: ''
+              }, {
+                label: '会议记录',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '规范文档',
+              url: '/',
+              children: [{
+                label: '我的会议',
+                url: ''
+              }, {
+                label: '会议通知',
+                url: ''
+              }, {
+                label: '会议室管理',
+                url: ''
+              }, {
+                label: '会议记录',
+                url: ''
+              }]
+            }, {
+              defaultIcon: '',
+              activeIcon: '',
+              label: '总裁信箱',
+              url: '/'
             }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '项目管理',
-            url: '/',
-            children: [{
-              label: '项目清单',
-              url: ''
-            }, {
-              label: '项目监控',
-              url: ''
-            }, {
-              label: '过程管理',
-              url: ''
-            }, {
-              label: '任务管理',
-              url: ''
-            }, {
-              label: '文档管理',
-              url: ''
-            }, {
-              label: '采购管理',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '人力资源',
-            url: '/',
-            children: [{
-              label: '新增工作',
-              url: ''
-            }, {
-              label: '入职指引',
-              url: ''
-            }, {
-              label: '打卡记录',
-              url: ''
-            }, {
-              label: '考勤管理',
-              url: ''
-            }, {
-              label: '员工考勤地点',
-              url: ''
-            }, {
-              label: '加班调休数据统计',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '客户管理',
-            url: '/',
-            children: [{
-              label: '客户管理',
-              url: ''
-            }, {
-              label: '客户批注',
-              url: ''
-            }, {
-              label: '客户会议',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '内部邮件',
-            url: '/',
-            children: [{
-              label: '写邮件',
-              url: ''
-            }, {
-              label: '已发邮件',
-              url: ''
-            }, {
-              label: '收件箱',
-              url: ''
-            }, {
-              label: '草稿箱',
-              url: ''
-            }, {
-              label: '回收站',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '学习交流',
-            url: '/'
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '我的文档',
-            url: '/'
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '工作圈',
-            url: '/'
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '会议系统',
-            url: '/',
-            children: [{
-              label: '我的会议',
-              url: ''
-            }, {
-              label: '会议通知',
-              url: ''
-            }, {
-              label: '会议室管理',
-              url: ''
-            }, {
-              label: '会议记录',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '日程管理',
-            url: '/',
-            children: [{
-              label: '我的会议',
-              url: ''
-            }, {
-              label: '会议通知',
-              url: ''
-            }, {
-              label: '会议室管理',
-              url: ''
-            }, {
-              label: '会议记录',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '系统配置',
-            url: '/',
-            children: [{
-              label: '我的会议',
-              url: ''
-            }, {
-              label: '会议通知',
-              url: ''
-            }, {
-              label: '会议室管理',
-              url: ''
-            }, {
-              label: '会议记录',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '问卷调查',
-            url: '/',
-            children: [{
-              label: '我的会议',
-              url: ''
-            }, {
-              label: '会议通知',
-              url: ''
-            }, {
-              label: '会议室管理',
-              url: ''
-            }, {
-              label: '会议记录',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '规范文档',
-            url: '/',
-            children: [{
-              label: '我的会议',
-              url: ''
-            }, {
-              label: '会议通知',
-              url: ''
-            }, {
-              label: '会议室管理',
-              url: ''
-            }, {
-              label: '会议记录',
-              url: ''
-            }]
-          }, {
-            defaultIcon: '',
-            activeIcon: '',
-            label: '总裁信箱',
-            url: '/'
-          }]
+          }
         }
       }
     })

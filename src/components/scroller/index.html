@@ -20,6 +20,7 @@
   <div id="app">
     <div style="width: 500px;height: 100px;border:1px solid #ccc;margin:20px;">
       <m-scroller>
+        <div @click="onclick">hahahah </div>
         <p>网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。</p>
         <p>页面中的img元素，想要获取它的原始尺寸，以宽度为例，可能首先想到的是元素的innerWidth属性，或者jQuery中的width()方法。</p>
         <p>但是如果给img元素增加了width属性，比如图片实际宽度是600，设置了width为400。这时候innerWidth为400，而不是600。显然，用innerWidth获取图片原始尺寸是不靠谱的。</p>
@@ -40,21 +41,7 @@
     <div style="width: 500px;height: 100px;border:1px solid #ccc;margin:20px;">
       <m-scroller>
         <div>
-          <p style="white-space: nowrap;">
-            网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。
-          </p>
-          <p style="white-space: nowrap;">
-            网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。
-          </p>
-          <p style="white-space: nowrap;">
-            网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。
-          </p>
-          <p style="white-space: nowrap;">
-            网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。
-          </p>
-          <p style="white-space: nowrap;">
-            网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。网上关于利用Javascript获取图片原始宽度和高度的方法有很多，本文将再次给大家谈谈这个问题，或许会对一些人能有所帮助。
-          </p>
+          <img src="../../assets/fj.jpg" alt="">
         </div>
       </m-scroller>
     </div>
@@ -63,7 +50,13 @@
   <script src="../../../dist/mui.js"></script>
   <script>
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        onclick: function (e) {
+          var target = e.target
+          target.style.height = target.offsetHeight + 50 + 'px'
+        }
+      }
     })
   </script>
 </body>

@@ -3,6 +3,7 @@
     class="m-icon"
     :spin="spin"
     :style="`width:${size}px;height:${size}px;color:${color};`"
+    @click="onClick"
   >
     <svg class="icon" aria-hidden="true" fill="currentColor">
       <use ref="use"></use>
@@ -34,6 +35,11 @@ export default {
   },
   mounted () {
     this.$refs.use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `#icon-${this.name}`)
+  },
+  methods: {
+    onClick (e) {
+      this.$emit('vclick', e)
+    }
   }
 }
 </script>

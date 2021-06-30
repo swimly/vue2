@@ -1,6 +1,7 @@
 .m-icon{
   display:inline-block;
   font-size:0;
+  vertical-align: middle;
   svg{
     width:100%;
     height:100%;
