@@ -29,7 +29,7 @@ module.exports = plop => {
         },
         {
           type: 'add',
-          path: `../src/components/${name}/index.js`,
+          path: `../src/components/${name}/index.ts`,
           templateFile: '../src/temp/js.hbs'
         },
         {

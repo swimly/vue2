@@ -13,7 +13,7 @@
         font-size:0;
         vertical-align: top;
         margin:0;
-        span{
+        & > span{
           font-size: 14px;
           display: inline-block;
         }
@@ -38,6 +38,11 @@
       font-size: 14px;
       color:v(text-default);
       margin-bottom:8px;
+    }
+    &[align=right]{
+      .m-form-content{
+        text-align:right;
+      }
     }
   }
 }

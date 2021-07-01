@@ -26,11 +26,26 @@
                 <m-form-item :span="6" label="用户名">
                   <m-input></m-input>
                 </m-form-item>
-                <m-form-item :span="6" label="用户名">
-                  <m-input></m-input>
+                <m-form-item :span="6" align="right">
+                  <m-button conner>重置</m-button>
+                  <m-space direction="left">
+                    <m-button type="primary" conner>查询</m-button>
+                  </m-space>
                 </m-form-item>
               </m-form>
             </m-space>
+          </m-col>
+          <m-col>
+            <m-row direction="horizontal">
+              <m-col paved>
+                <m-button type="primary" outline conner>新增</m-button>
+              </m-col>
+              <m-col align="right">
+                <m-space size="12" direction="bottom">
+                  <m-pagination :current-page="1" :total="1000"></m-pagination>
+                </m-space>
+              </m-col>
+            </m-row>
           </m-col>
           <m-col paved>
             <m-table :data="tableData">
@@ -49,15 +64,6 @@
               <m-table-column type="button" fixed="suffix" label="操作" width="160">
               </m-table-column>
             </m-table>
-          </m-col>
-          <m-col>
-            <m-space size="12" direction="top">
-              <m-row>
-                <m-col align="right">
-                  <m-pagination :current-page="1" :total="1000"></m-pagination>
-                </m-col>
-              </m-row>
-            </m-space>
           </m-col>
         </m-row>
       </m-panel>

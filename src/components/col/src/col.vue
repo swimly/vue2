@@ -4,6 +4,7 @@
     :wrap="wrap"
     :type="type"
     :paved="paved"
+    :align="align"
     :style="`
       width:${100/24*span}%;padding:${gutter/2}px;
     `"
@@ -24,6 +25,10 @@ export default {
     paved: {
       type: Boolean,
       default: false
+    },
+    align: {
+      type: String,
+      default: 'left'
     }
   },
   computed: {

@@ -19,6 +19,7 @@ import MPaginaton from './components/pagination'
 import MTable from './components/table'
 import MTableColumn from './components/table-column'
 import MSpace from './components/space'
+import MPopover from './components/popover'
 
 const components = [
   MButton,
@@ -41,7 +42,8 @@ const components = [
   MPaginaton,
   MTable,
   MTableColumn,
-  MSpace
+  MSpace,
+  MPopover
 ]
 
 const install = function (Vue) {

@@ -12,6 +12,7 @@
   font-size: 14px;
   color:v(text-default);
   position:relative;
+  vertical-align: middle;
   &::before{
     content:"";
     position:absolute;

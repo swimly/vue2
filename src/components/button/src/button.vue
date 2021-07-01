@@ -16,7 +16,7 @@
 <script>
 import MIcon from '../../icon/src/icon.vue'
 export default {
-  name: 'mc-button',
+  name: 'm-button',
   components: {
     MIcon
   },

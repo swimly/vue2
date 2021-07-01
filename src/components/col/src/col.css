@@ -13,4 +13,7 @@
       flex:1;
     }
   }
+  &[align=right]{
+    text-align:right;
+  }
 }

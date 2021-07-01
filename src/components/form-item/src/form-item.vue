@@ -4,8 +4,9 @@
       class="m-form-item"
       :label-position="labelPosition"
       :inline="inline"
+      :align="align"
     >
-      <div class="m-form-prefix">
+      <div class="m-form-prefix" v-if="label">
         <span
           :style="`line-height:${height}px;width:${labelWidth}px`"
         >
@@ -38,6 +39,10 @@ export default {
     span: {
       type: Number,
       default: 24
+    },
+    align: {
+      type: String,
+      default: 'left'
     }
   },
   data () {

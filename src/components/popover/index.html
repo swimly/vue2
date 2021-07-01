@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../dist/mui.css">
+  <style>
+    p{
+      margin:0;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="padding:150px;">
+    <m-space size="100" direction="top,left,bottom,right">
+      <m-space>
+        <m-row>
+          <m-col :span="4"></m-col>
+          <m-col :span="4">
+            <m-popover placement="top-left">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+            <m-popover placement="top">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+            <m-popover placement="top-right">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+        </m-row>
+      </m-space>
+      <m-space>
+        <m-row>
+          <m-col :span="4">
+            <m-popover placement="left-top">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+          </m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4">
+            <m-popover placement="right-top">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+        </m-row>
+      </m-space>
+      <m-space>
+        <m-row>
+          <m-col :span="4">
+            <m-popover placement="left">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+          </m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4">
+            <m-popover placement="right">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+        </m-row>
+      </m-space>
+      <m-space>
+        <m-row>
+          <m-col :span="4">
+            <m-popover placement="left-bottom">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+          </m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4"></m-col>
+          <m-col :span="4">
+            <m-popover placement="right-bottom">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+        </m-row>
+      </m-space>
+      <m-space>
+        <m-row>
+          <m-col :span="4"></m-col>
+          <m-col :span="4">
+            <m-popover placement="bottom-left">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+            <m-popover placement="bottom">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+          <m-col :span="4">
+            <m-popover placement="bottom-right">
+              <m-button type="primary">按钮</m-button>
+              <p slot="content">使用 visible 属性控制浮层显示。</p>
+            </m-popover>
+          </m-col>
+        </m-row>
+      </m-space>
+    </m-space>
+  </div>
+  <script src="../../../node_modules/vue/dist/vue.min.js"></script>
+  <script src="../../../dist/mui.js"></script>
+  <script>
+    new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

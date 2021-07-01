@@ -1,1 +1,1 @@
-.m-col{-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;font-size:16px;vertical-align:top}.m-col[type=table]{display:table-cell;vertical-align:middle}.m-col[type=flex]{display:block}
+.m-col{-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;font-size:16px;vertical-align:top}.m-col[type=table]{display:table-cell;vertical-align:middle}.m-col[type=flex]{display:block}.m-col[type=flex][paved]{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}
