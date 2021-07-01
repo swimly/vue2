@@ -41,6 +41,7 @@
     <span class="m-pagination-label">
       <span>共：{{total}}条</span>
     </span>
+    <input v-model="current" type="text" @input="onJump" class="m-pagination-input">
   </div>
 </template>
 
@@ -107,7 +108,12 @@ export default {
   },
   methods: {
     onJump (value) {
-      this.current = value
+      let v = typeof value === 'number' ? value : parseInt(value.target.value)
+      v = v > this.pageCount ? this.pageCount : v < 1 ? 1 : v
+      if (isNaN(v)) {
+        v = 1
+      }
+      this.current = v
     },
     onChoice (item) {
       const v = this.itemCount - 2

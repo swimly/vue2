@@ -4,7 +4,6 @@
   position:relative;
   &-content{
     overflow:scroll;
-    scroll-behavior: smooth;
     position:absolute;
     top:0;
     left:0;
@@ -17,6 +16,7 @@
     position:absolute;
     top:0;
     left:0;
+    min-width:100%;
   }
   &-bar{
     position:absolute;

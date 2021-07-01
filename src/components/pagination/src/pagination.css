@@ -1,5 +1,6 @@
 .m-pagination{
   font-size:0;
+  user-select: none;
   &-item,
   &-button{
     display:inline-block;
@@ -59,5 +60,20 @@
     display:inline-block;
     vertical-align: middle;
     margin-left:8px;
+  }
+  &-input{
+    border:1px solid v(border-default);
+    width: 60px;
+    height:32px;
+    vertical-align: middle;
+    margin-left:12px;
+    border-radius:2px;
+    box-sizing: border-box;
+    text-align:center;
+    outline:none;
+    transition:0.3s;
+    &:focus{
+      border-color:v(color-primary);
+    }
   }
 }

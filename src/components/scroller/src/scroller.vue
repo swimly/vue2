@@ -52,6 +52,10 @@ export default {
     barColor: {
       type: String,
       default: 'rgba(0,0,0,0.3)'
+    },
+    smooth: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -63,6 +67,9 @@ export default {
       let style = {}
       style.marginRight = `${-barwidth}px`
       style.marginBottom = `${-barwidth}px`
+      if (this.smooth) {
+        style.scrollBehavior = 'smooth'
+      }
       return style
     }
   },
@@ -87,13 +94,22 @@ export default {
     }
   },
   mounted () {
+    this.content = this.$refs.content
     const erd = elementResizeDetectorMaker({
       strategy: 'scroll',
       callOnAdd: true
     })
     erd.listenTo(this.$refs.content.childNodes[0], (el) => {
-      const width = el.parentNode.offsetWidth
-      const height = el.parentNode.offsetHeight
+      this.refresh()
+    })
+  },
+  created () {
+  },
+  methods: {
+    refresh () {
+      const el = this.content.childNodes[0]
+      const width = el.parentNode.offsetWidth - this.scrollBarWidth
+      const height = el.parentNode.offsetHeight - this.scrollBarWidth
       const swidth = el.offsetWidth
       const sheight = el.offsetHeight
       this.computedSize({w:width,h:height,sw:swidth,sh:sheight})
@@ -108,12 +124,16 @@ export default {
           this.barX.style.width = `${width * this.scale.x}px`
           this.maxB.x = this.barX.parentNode.offsetWidth - this.barX.offsetWidth
         }
+        if (width && height) {
+          this.$emit('vchange', {
+            width,
+            height,
+            scaleX: this.scale.x,
+            scaleY: this.scale.y
+          })
+        }
       })
-    })
-  },
-  created () {
-  },
-  methods: {
+    },
     onScroll () {
       const scrolltop = this.content.scrollTop
       const scrollleft = this.content.scrollLeft
@@ -127,9 +147,20 @@ export default {
       if (this.barX) {
         this.barX.style.left = `${this.maxB.x * ms.x}px`
       }
+      this.$emit('vscroll', {
+        scrolltop,
+        scrollleft,
+        bartop: this.maxB.y * ms.y,
+        barleft: this.maxB.x * ms.x,
+        istop: scrolltop === 0,
+        isbottom: scrolltop === this.maxS.y,
+        isleft: scrollleft === 0,
+        isright: scrollleft === this.maxS.x
+      })
+      this.$emit('update:scrollLeft', scrollleft)
+      this.$emit('update:scrollTop', scrolltop)
     },
     computedSize (obj) {
-      const $c = this.$refs.content
       const {w,h,sw,sh} = obj
       if (sh > h && this.scrollBarWidth) {
         this.maxS.y = sh - h
@@ -145,7 +176,6 @@ export default {
       } else {
         this.hasX = false
       }
-      this.content = $c
       this.$nextTick(() => {
         this.content.scrollTop = this.scrollTop
         this.content.scrollLeft = this.scrollLeft

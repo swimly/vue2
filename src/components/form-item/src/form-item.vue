@@ -3,6 +3,7 @@
     <div
       class="m-form-item"
       :label-position="labelPosition"
+      :inline="inline"
     >
       <div class="m-form-prefix">
         <span
@@ -25,7 +26,7 @@
 import MCol from '../../col/src/col.vue'
 export default {
   name: 'm-form-item',
-  inject: ['labelPosition', 'labelWidth'],
+  inject: ['labelPosition', 'labelWidth', 'inline'],
   components: {
     MCol
   },
@@ -37,11 +38,6 @@ export default {
     span: {
       type: Number,
       default: 24
-    }
-  },
-  computed: {
-    inline () {
-      return this.$parent.inline
     }
   },
   data () {

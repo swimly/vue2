@@ -42,7 +42,6 @@ export default (name, env) => {
           script: 'ts'
         },
         preprocessStyles: (res) => {
-          console.log(res)
         }
       }),
       json(),

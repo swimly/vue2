@@ -16,6 +16,9 @@ import MScroller from './components/scroller'
 import MBookmark from './components/bookmark'
 import MPanel from './components/panel'
 import MPaginaton from './components/pagination'
+import MTable from './components/table'
+import MTableColumn from './components/table-column'
+import MSpace from './components/space'
 
 const components = [
   MButton,
@@ -35,7 +38,10 @@ const components = [
   MScroller,
   MBookmark,
   MPanel,
-  MPaginaton
+  MPaginaton,
+  MTable,
+  MTableColumn,
+  MSpace
 ]
 
 const install = function (Vue) {

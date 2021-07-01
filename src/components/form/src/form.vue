@@ -11,7 +11,8 @@ export default {
   provide () {
     return {
       labelPosition: this.labelPosition,
-      labelWidth: this.labelWidth
+      labelWidth: this.labelWidth,
+      inline: this.inline
     }
   },
   components: {
@@ -28,7 +29,7 @@ export default {
     },
     inline: {
       type: Boolean,
-      default: false
+      default: true
     },
     gutter: {
       type: String | Number,

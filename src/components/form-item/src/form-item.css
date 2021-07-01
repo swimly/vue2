@@ -1,6 +1,7 @@
 .m-form{
   &-item{
     display:block;
+    &[inline],
     &[label-position=right],
     &[label-position=left]{
       display:table;
