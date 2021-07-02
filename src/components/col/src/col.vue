@@ -1,37 +1,39 @@
 <template>
   <div
     class="m-col"
-    :wrap="wrap"
-    :type="type"
-    :paved="paved"
-    :align="align"
-    :style="`
-      width:${100/24*span}%;padding:${gutter/2}px;
-    `"
+    :style="colStyle"
   >
-    <slot/>
+    <span
+    ><slot/></span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'm-col',
-  inject: ['gutter', 'wrap', 'type'],
-  props: {
-    span: {
-      type: Number,
-      default: 24
-    },
-    paved: {
-      type: Boolean,
-      default: false
-    },
-    align: {
-      type: String,
-      default: 'left'
+  inject: ['paved'],
+  computed: {
+    colStyle () {
+      const {span} = this
+      let style = {}
+      if (this.paved) {
+        if (this.span === 'auto') {
+          style['width'] = '100%'
+        } else {
+          style['width'] = 'auto'
+          style['white-space'] = 'nowrap'
+        }
+      } else {
+        style['width'] = `${100/24*span}%`
+      }
+      return style
     }
   },
-  computed: {
+  props: {
+    span: {
+      type: Number | String,
+      default: ''
+    }
   },
   created () {
   }

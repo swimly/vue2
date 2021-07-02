@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../dist/mui.css">
+</head>
+<body>
+  <div id="app">
+    <m-row>
+      <m-col :span="6">1</m-col>
+      <m-col :span="6">2</m-col>
+      <m-col span="12">3</m-col>
+    </m-row>
+    <m-row paved>
+      <m-col>1</m-col>
+      <m-col span="auto">2</m-col>
+      <m-col>3</m-col>
+    </m-row>
+  </div>
+  <script src="../../../node_modules/vue/dist/vue.min.js"></script>
+  <script src="../../../dist/mui.js"></script>
+  <script>
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

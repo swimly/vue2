@@ -21,7 +21,7 @@ export default {
   props: {
     placement: {
       type: String,
-      default: ''
+      default: 'botton-right'
     },
     visible: {
       type: Boolean,

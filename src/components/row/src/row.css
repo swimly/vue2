@@ -1,15 +1,5 @@
 .m-row{
-  font-size:0;
-  height: 100%;
-  &[type=table]{
-    display:table;
-    width:100%;
-  }
-  &[type=flex]{
-    display:flex;
-    flex-direction: row;
-    &[direction=vertical]{
-      flex-direction: column;
-    }
-  }
+  display:table;
+  width:100%;
+  color:inherit;
 }

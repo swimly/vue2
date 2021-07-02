@@ -41,6 +41,9 @@
     <span class="m-pagination-label">
       <span>共：{{total}}条</span>
     </span>
+    <span class="m-pagination-label">
+      <span>{{pageSize}}条/页</span>
+    </span>
     <input v-model="current" type="text" @input="onJump" class="m-pagination-input">
   </div>
 </template>

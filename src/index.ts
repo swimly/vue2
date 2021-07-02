@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import MButton from './components/button'
 import MRow from './components/row'
 import MCol from './components/col'
@@ -20,6 +21,8 @@ import MTable from './components/table'
 import MTableColumn from './components/table-column'
 import MSpace from './components/space'
 import MPopover from './components/popover'
+import MGrid from './components/grid'
+import MGridItem from './components/grid-item'
 
 const components = [
   MButton,
@@ -43,7 +46,9 @@ const components = [
   MTable,
   MTableColumn,
   MSpace,
-  MPopover
+  MPopover,
+  MGrid,
+  MGridItem
 ]
 
 const install = function (Vue) {

@@ -14,7 +14,36 @@
           <slot name="header-content"/>
         </div>
         <div class="m-page-header-suffix">
-          <slot name="header-suffix"/>
+          <slot name="header-suffix">
+            <m-popover placement="bottom-right" effect="hover">
+              <m-row style="cursor:pointer;">
+                <m-col>
+                  <img src="../../../assets/avatar.png" alt="">
+                </m-col>
+                <m-col>
+                  <span style="font-size:12px;padding:0 8px;">用户名</span>
+                </m-col>
+                <m-col>
+                  <m-icon size="10" name="caret-down"></m-icon>
+                </m-col>
+              </m-row>
+              <div slot="content" style="width:120px;padding:8px;">
+                <p style="margin:0;padding: 8px 16px;cursor:pointer">个人设置</p>
+                <p style="margin:0;padding: 8px 16px;cursor:pointer">岗位切换</p>
+                <p style="margin:0;padding: 8px 16px;cursor:pointer">首页设置</p>
+              </div>
+            </m-popover>
+            <m-space size="24" direction="left">
+              <m-popover placement="bottom-right" effect="hover">
+                <m-icon size="16" name="booklet"></m-icon>
+              </m-popover>
+            </m-space>
+            <m-space size="24" direction="left">
+              <m-popover placement="bottom-right" effect="hover">
+                <m-icon size="16" name="logout-circle"></m-icon>
+              </m-popover>
+            </m-space>
+          </slot>
         </div>
       </div>
     </div>
@@ -27,7 +56,9 @@
           </slot>
         </m-scroller>
       </div>
-      <div class="m-page-menu-suffix"></div>
+      <div class="m-page-menu-suffix">
+
+      </div>
     </div>
     <div class="m-page-content">
       <div class="m-page-bookmark">

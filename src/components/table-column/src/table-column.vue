@@ -9,8 +9,8 @@ export default {
   name: 'm-table-column',
   props: {
     width: {
-      type: Number,
-      default: 120
+      type: String,
+      default: '120'
     },
     label: {
       type: String,

@@ -1,19 +1,8 @@
 .m-col{
-  display:inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  font-size: 16px;
-  &[type=table]{
-    display:table-cell;
+  display:table-cell;
+  color:inherit;
+  & > span{
+    display:inline-block;
     vertical-align: middle;
-  }
-  &[type=flex]{
-    display:block;
-    &[paved]{
-      flex:1;
-    }
-  }
-  &[align=right]{
-    text-align:right;
   }
 }

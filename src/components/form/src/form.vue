@@ -1,7 +1,7 @@
 <template>
-  <m-row class="m-form" :gutter="gutter">
+  <m-grid class="m-form" :gutter="gutter">
     <slot></slot>
-  </m-row>
+  </m-grid>
 </template>
 
 <script>

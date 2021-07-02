@@ -10,7 +10,7 @@
       :style="`left:${space}px`"
     ></div>
     <div class="m-bookmark-content" ref="content">
-      <m-scroller bar-color="rgba(0,0,0,0)" :bar-width="2" :scroll-left="scroll">
+      <m-scroller :smooth="true" bar-color="rgba(0,0,0,0)" :bar-width="2" :scroll-left="scroll">
         <ul
           class="m-bookmark-list"
           ref="list"
@@ -21,6 +21,8 @@
             }"
             :style="`height:${height}px`"
             :active="index === currentIndex"
+            :prev="index === currentIndex - 1"
+            :next="index === currentIndex + 1"
             v-for="(item, index) in list"
             :key="index"
             @click="onItemClick(index)"

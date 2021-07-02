@@ -13,41 +13,30 @@
   <div id="app">
     <m-page shape="modern" :data="pageData">
       <m-panel>
-        <m-row :async="true">
-          <m-col>
-            <m-space size="12" direction="bottom">
-              <m-form labm-position="left">
-                <m-form-item :span="6" label="用户名">
-                  <m-input></m-input>
-                </m-form-item>
-                <m-form-item :span="6" label="用户名">
-                  <m-input></m-input>
-                </m-form-item>
-                <m-form-item :span="6" label="用户名">
-                  <m-input></m-input>
-                </m-form-item>
-                <m-form-item :span="6" align="right">
-                  <m-button conner>重置</m-button>
-                  <m-space direction="left">
-                    <m-button type="primary" conner>查询</m-button>
-                  </m-space>
-                </m-form-item>
-              </m-form>
-            </m-space>
-          </m-col>
-          <m-col>
-            <m-row direction="horizontal">
-              <m-col paved>
-                <m-button type="primary" outline conner>新增</m-button>
-              </m-col>
-              <m-col align="right">
-                <m-space size="12" direction="bottom">
-                  <m-pagination :current-page="1" :total="1000"></m-pagination>
+        <m-grid direction="vertical" height="100%" gutter="16">
+          <m-grid-item>
+            <m-form labm-position="left">
+              <m-form-item :span="6" label="用户名：">
+                <m-input></m-input>
+              </m-form-item>
+              <m-form-item :span="6" label="时间：">
+                <m-input suffix-icon="date"></m-input>
+              </m-form-item>
+              <m-form-item :span="6" label="类别：">
+                <m-input suffix-icon="arrow-down"></m-input>
+              </m-form-item>
+              <m-form-item :span="6" align="right">
+                <m-button conner>重置</m-button>
+                <m-space direction="left">
+                  <m-button type="primary" conner>查询</m-button>
                 </m-space>
-              </m-col>
-            </m-row>
-          </m-col>
-          <m-col paved>
+                <!-- <m-space direction="left">
+                  <m-button type="primary" text icon="arrow-down">展开</m-button>
+                </m-space> -->
+              </m-form-item>
+            </m-form>
+          </m-grid-item>
+          <m-grid-item paved>
             <m-table :data="tableData">
               <m-table-column fixed="prefix" prop="date" label="日期" width="180">
               </m-table-column>
@@ -59,17 +48,25 @@
               </m-table-column>
               <m-table-column prop="address" label="地址" width="300">
               </m-table-column>
-              <m-table-column prop="zip" label="邮编" width="120">
+              <m-table-column prop="zip" label="邮编" width="160">
               </m-table-column>
               <m-table-column type="button" fixed="suffix" label="操作" width="160">
               </m-table-column>
             </m-table>
-          </m-col>
-        </m-row>
+          </m-grid-item>
+          <m-grid-item last>
+            <m-row paved>
+              <m-col span="auto"></m-col>
+              <m-col>
+                <m-pagination :current-page="1" :total="1000"></m-pagination>
+              </m-col>
+            </m-row>
+          </m-grid-item>
+        </m-grid>
       </m-panel>
     </m-page>
   </div>
-  <script src="../../../node_modules/vue/dist//vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="../../../dist/mui.js"></script>
   <script>
     new Vue({
@@ -160,9 +157,65 @@
             city: '普陀区',
             address: '上海市普陀区金沙江路 1516 弄',
             zip: 200333
+          }, {
+            date: '2016-05-02',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1517 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1519 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1516 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-02',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1518 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1517 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1519 弄',
+            zip: 200333
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            province: '上海',
+            city: '普陀区',
+            address: '上海市普陀区金沙江路 1516 弄',
+            zip: 200333
           }],
           pageData: {
-            logl: 'https://pm.longrise.cn/LPOM/LEAP/SharedLib/c78357cd0b4b432d9c135a741e15c2bf/logo3.png',
+            logo: 'https://pm.longrise.cn/LPOM/LEAP/SharedLib/c78357cd0b4b432d9c135a741e15c2bf/logo3.png',
             bookmark: [{
               label: '首页'
             }, {
@@ -192,12 +245,14 @@
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '首页',
-              url: '/'
+              url: '/',
+              id: '0'
             }, {
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '个人办公',
               url: '/',
+              id: '1',
               children: [{
                 label: '新增工作',
                 url: '/'
@@ -258,6 +313,7 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '项目管理',
               url: '/',
+              id: '1',
               children: [{
                 label: '项目清单',
                 url: ''
@@ -282,6 +338,7 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '人力资源',
               url: '/',
+              id: '1',
               children: [{
                 label: '新增工作',
                 url: ''
@@ -306,6 +363,7 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '客户管理',
               url: '/',
+              id: '1',
               children: [{
                 label: '客户管理',
                 url: ''
@@ -321,6 +379,7 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '内部邮件',
               url: '/',
+              id: '1',
               children: [{
                 label: '写邮件',
                 url: ''
@@ -341,33 +400,40 @@
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '学习交流',
+              id: '1',
               url: '/'
             }, {
-              defaultIcon: '',
-              activeIcon: '',
+              defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
+              activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '我的文档',
               url: '/'
             }, {
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '工作圈',
+              id: '1',
               url: '/'
             }, {
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '会议系统',
+              id: '1',
               url: '/',
               children: [{
                 label: '我的会议',
+                id: '1',
                 url: ''
               }, {
                 label: '会议通知',
+                id: '1',
                 url: ''
               }, {
                 label: '会议室管理',
+                id: '1',
                 url: ''
               }, {
                 label: '会议记录',
+                id: '1',
                 url: ''
               }]
             }, {
@@ -375,17 +441,22 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '日程管理',
               url: '/',
+              id: '1',
               children: [{
                 label: '我的会议',
+                id: '1',
                 url: ''
               }, {
                 label: '会议通知',
+                id: '1',
                 url: ''
               }, {
                 label: '会议室管理',
+                id: '1',
                 url: ''
               }, {
                 label: '会议记录',
+                id: '1',
                 url: ''
               }]
             }, {
@@ -393,17 +464,22 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '系统配置',
               url: '/',
+              id: '1',
               children: [{
                 label: '我的会议',
+                id: '1',
                 url: ''
               }, {
                 label: '会议通知',
+                id: '1',
                 url: ''
               }, {
                 label: '会议室管理',
+                id: '1',
                 url: ''
               }, {
                 label: '会议记录',
+                id: '1',
                 url: ''
               }]
             }, {
@@ -413,15 +489,19 @@
               url: '/',
               children: [{
                 label: '我的会议',
+                id: '1',
                 url: ''
               }, {
                 label: '会议通知',
+                id: '1',
                 url: ''
               }, {
                 label: '会议室管理',
+                id: '1',
                 url: ''
               }, {
                 label: '会议记录',
+                id: '1',
                 url: ''
               }]
             }, {
@@ -429,23 +509,29 @@
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '规范文档',
               url: '/',
+              id: '1',
               children: [{
                 label: '我的会议',
+                id: '1',
                 url: ''
               }, {
                 label: '会议通知',
+                id: '1',
                 url: ''
               }, {
                 label: '会议室管理',
+                id: '1',
                 url: ''
               }, {
                 label: '会议记录',
+                id: '1',
                 url: ''
               }]
             }, {
               defaultIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               activeIcon: 'https://pm.longrise.cn/LPOM/LEAP/systemImgs/img_menu/selected/firstpage2.png',
               label: '总裁信箱',
+              id: '1',
               url: '/'
             }]
           }

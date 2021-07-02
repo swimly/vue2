@@ -1,5 +1,5 @@
 <template>
-  <m-col :span="span">
+  <m-grid-item :span="span">
     <div
       class="m-form-item"
       :label-position="labelPosition"
@@ -20,7 +20,7 @@
         <slot name="suffix"></slot>
       </div>
     </div>
-  </m-col>
+  </m-grid-item>
 </template>
 
 <script>

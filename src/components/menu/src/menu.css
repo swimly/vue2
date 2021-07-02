@@ -40,8 +40,16 @@
   }
   &-content{
     padding-left:24px;
+    display:none;
     .m-menu-handle{
       height:40px;
+    }
+  }
+  &-item{
+    &[active]{
+      & > .m-menu-content{
+        display:block;
+      }
     }
   }
 }
