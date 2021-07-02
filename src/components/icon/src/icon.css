@@ -10,6 +10,27 @@
   &[spin]{
     animation: iconrotate 1s linear infinite;
   }
+  &[type=default]{
+    color: v(text-default);
+  }
+  &[type=regular]{
+    color: v(text-regular);
+  }
+  &[type=secondary]{
+    color: v(text-secondary);
+  }
+  &[type=primary]{
+    color:v(color-primary);
+  }
+  &[type=warning]{
+    color:v(color-warning);
+  }
+  &[type=success]{
+    color:v(color-success);
+  }
+  &[type=danger]{
+    color:v(color-danger);
+  }
 }
 
 @keyframes iconrotate {

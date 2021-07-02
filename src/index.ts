@@ -23,6 +23,9 @@ import MSpace from './components/space'
 import MPopover from './components/popover'
 import MGrid from './components/grid'
 import MGridItem from './components/grid-item'
+import MTitle from './components/title'
+import MText from './components/text'
+import MParagraph from './components/paragraph'
 
 const components = [
   MButton,
@@ -48,7 +51,10 @@ const components = [
   MSpace,
   MPopover,
   MGrid,
-  MGridItem
+  MGridItem,
+  MTitle,
+  MText,
+  MParagraph
 ]
 
 const install = function (Vue) {

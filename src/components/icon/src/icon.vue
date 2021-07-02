@@ -2,7 +2,8 @@
   <span
     class="m-icon"
     :spin="spin"
-    :style="`width:${size}px;height:${size}px;color:${color};`"
+    :type="type"
+    :style="`width:${size}px;height:${size}px;color:${color};cursor:${cursor}`"
     @click="onClick"
   >
     <svg class="icon" aria-hidden="true" fill="currentColor">
@@ -29,6 +30,18 @@ export default {
       default: false
     },
     name: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    cursor: {
+      type: String,
+      default: 'default'
+    },
+    hoverColor: {
       type: String,
       default: ''
     }

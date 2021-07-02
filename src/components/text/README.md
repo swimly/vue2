@@ -1,14 +1,8 @@
-# {{properCase name}}
+# Text
 
-<!-- start -->
+<div class="preview">
 
-### 基础
-
-<div class="code">
-  <m-{{name}}>title</m-{{name}}>
 </div>
-
-<!-- end -->
 
 <!-- start -->
 
@@ -21,7 +15,7 @@
 <!-- end -->
 
 <script>
-  var previews = document.querySelectorAll('.code')
+  var previews = document.querySelectorAll('.preview')
   for (var i = 0; i < previews.length; i++) {
     new Vue({
       el: previews[i]

@@ -1,5 +1,14 @@
 <template>
-  <div class="m-button">
+  <div
+    class="m-button"
+    :type="type"
+    :outline="outline"
+    :plain="plain"
+    :conner="conner"
+    :rounder="rounder"
+    :text="text"
+    @click="onClick"
+  >
     <span class="m-button-icon">
       <slot name="icon">
         <m-icon v-if="icon" size="14" :name="icon"></m-icon>
@@ -28,6 +37,35 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    type: {
+      type: String,
+      default: 'primary'
+    },
+    outline: {
+      type: Boolean,
+      default: false
+    },
+    rounder: {
+      type: Boolean,
+      default: false
+    },
+    plain: {
+      type: Boolean,
+      default: false
+    },
+    text: {
+      type: Boolean,
+      default: false
+    },
+    conner: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    onClick (e) {
+      this.$emit('vclick', e)
     }
   },
   created () {

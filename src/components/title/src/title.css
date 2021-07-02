@@ -1,0 +1,40 @@
+.m-title{
+  display:table;
+  width: 100%;
+  &-prefix,
+  &-content,
+  &-suffix{
+    display:table-cell;
+    vertical-align: middle;
+  }
+  &-content{
+    width:100%;
+  }
+  &-prefix,
+  &-suffix{
+    white-space: nowrap;
+  }
+  &-label{
+    margin:0;
+    font-size:inherit;
+    font-weight: 600;
+  }
+  &[level=h1]{
+    font-size:36px;
+  }
+  &[level=h2]{
+    font-size:32px;
+  }
+  &[level=h3]{
+    font-size:28px;
+  }
+  &[level=h4]{
+    font-size:24px;
+  }
+  &[level=h5]{
+    font-size:20px;
+  }
+  &[level=h6]{
+    font-size:16px;
+  }
+}

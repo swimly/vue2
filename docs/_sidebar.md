@@ -1,8 +1,14 @@
-- [起步](./docs/starter.md)
-- 基础
+- [组件总览]()
+- 通用
   - [Button 按钮](src/components/button/README.md)
-  - [Grid 栅格](src/components/row/README.md)
   - [Icon 图标](src/components/icon/README.md)
+  - [Typography 排版](src/components/icon/README.md)
+  - [Title 标题](src/components/title/README.md)
+  - [Text 文本](src/components/text/README.md)
+  - [Paragraph 段落](src/components/paragraph/README.md)
+- 布局
+- 基础
+  - [Grid 栅格](src/components/row/README.md)
   - [Input 输入框](src/components/input/README.md)
   - [Form 表单](src/components/form/README.md)
   - [Radio 单选](src/components/radio/README.md)
