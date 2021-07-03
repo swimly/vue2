@@ -1,8 +1,27 @@
-# Text
+<style>
+  .m-text{
+    margin-right:20px;
+  }
+</style>
+# Text 文本
 
-<div class="preview">
+<!-- start -->
 
+### 基础
+
+<div class="code">
+  <m-text>文本</m-text>
+  <m-text type="default">文本</m-text>
+  <m-text type="regular">文本</m-text>
+  <m-text type="secondary">文本</m-text>
+  <m-text type="placeholder">文本</m-text>
+  <m-text type="primary">文本</m-text>
+  <m-text type="warning">文本</m-text>
+  <m-text type="success">文本</m-text>
+  <m-text type="danger">文本</m-text>
 </div>
+
+<!-- end -->
 
 <!-- start -->
 
@@ -15,7 +34,7 @@
 <!-- end -->
 
 <script>
-  var previews = document.querySelectorAll('.preview')
+  var previews = document.querySelectorAll('.code')
   for (var i = 0; i < previews.length; i++) {
     new Vue({
       el: previews[i]

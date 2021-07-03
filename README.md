@@ -30,6 +30,11 @@
     display:block;
     margin-top:20px;
   }
+  @media screen and (max-width: 1600px){
+    .iconlist li{
+      width:33.33%;
+    }
+  }
 </style>
 
 # 组件总览

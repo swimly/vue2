@@ -1,1 +1,35 @@
-.m-text{}
+.m-text{
+  display:inline-block;
+  vertical-align: middle;
+  color: inherit;
+  font-size:inherit;
+  &-value{
+    display:inline-block;
+    vertical-align: middle;
+    line-height:1;
+  }
+  &[type=default]{
+    color: v(text-default);
+  }
+  &[type=regular]{
+    color: v(text-regular);
+  }
+  &[type=secondary]{
+    color: v(text-secondary);
+  }
+  &[type=placeholder]{
+    color: v(text-placeholder);
+  }
+  &[type=primary]{
+    color:v(color-primary);
+  }
+  &[type=warning]{
+    color: v(color-warning);
+  }
+  &[type=success]{
+    color: v(color-success);
+  }
+  &[type=danger]{
+    color: v(color-danger);
+  }
+}
