@@ -1,15 +1,21 @@
 .m-paragraph{
+  font-size: 16px;
+  line-height: 1.8;
+  position:relative;
   &-more{
-    font-size: 14px;
     white-space: nowrap;
     display:inline-block;
     color:v(color-primary);
+    position:absolute;
+    right:0;
+    bottom:0;
+    cursor: pointer;
   }
   &-content{
-    overflow:hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    word-wrap: break-word;
-    text-align: justify
+    display:block;
+    text-align:justify;
+  }
+  &-source{
+    display:none;
   }
 }

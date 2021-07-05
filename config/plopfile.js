@@ -41,6 +41,11 @@ module.exports = plop => {
           type: 'add',
           path: `../src/components/${name}/src/${name}.vue`,
           templateFile: `../src/temp/vue.hbs`
+        },
+        {
+          type: 'add',
+          path: `../src/components/${name}/index.html`,
+          templateFile: `../src/temp/html.hbs`
         }
       ]
       return actions

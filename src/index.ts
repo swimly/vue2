@@ -26,6 +26,13 @@ import MGridItem from './components/grid-item'
 import MTitle from './components/title'
 import MText from './components/text'
 import MParagraph from './components/paragraph'
+import MDivider from './components/divider'
+import MModal from './components/modal'
+import MMask from './components/mask'
+
+// 全局函数组件
+import Mask from './components/mask/global'
+Vue.prototype.$mask = Mask
 
 const components = [
   MButton,
@@ -54,7 +61,10 @@ const components = [
   MGridItem,
   MTitle,
   MText,
-  MParagraph
+  MParagraph,
+  MDivider,
+  MModal,
+  MMask
 ]
 
 const install = function (Vue) {

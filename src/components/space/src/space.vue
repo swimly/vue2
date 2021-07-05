@@ -1,6 +1,7 @@
 <template>
   <div
     class="m-space"
+    :block="block"
     :style="marginStyle"
   >
     <slot></slot>
@@ -18,6 +19,10 @@ export default {
     size: {
       type: String | Number,
       default: 12
+    },
+    block: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {

@@ -1,6 +1,8 @@
-# Checkbox
+# Checkbox 复选框
 
-<div class="preview">
+<!-- start -->
+
+<div class="code">
   <p>{{s1}}</p>
   <m-checkbox-group v-model="s1">
     <m-checkbox value="1">单选</m-checkbox>
@@ -9,8 +11,10 @@
   </m-checkbox-group>
 </div>
 
+<!-- end -->
+
 <script>
-  var previews = document.querySelectorAll('.preview')
+  var previews = document.querySelectorAll('.code')
   for (var i = 0; i < previews.length; i++) {
     new Vue({
       el: previews[i],

@@ -15,7 +15,7 @@
         </div>
         <div class="m-page-header-suffix">
           <slot name="header-suffix">
-            <m-popover placement="bottom-right" effect="hover">
+            <!-- <m-popover placement="bottom-right" effect="hover">
               <m-row style="cursor:pointer;">
                 <m-col>
                   <img src="../../../assets/avatar.png" alt="">
@@ -42,7 +42,7 @@
               <m-popover placement="bottom-right" effect="hover">
                 <m-icon size="16" name="logout-circle"></m-icon>
               </m-popover>
-            </m-space>
+            </m-space> -->
           </slot>
         </div>
       </div>
@@ -50,7 +50,7 @@
     <div class="m-page-menu">
       <div class="m-page-menu-prefix"></div>
       <div class="m-page-menu-content">
-        <m-scroller>
+        <m-scroller v-if="data.menu">
           <slot name="menu-content">
             <m-menu v-model="data.menu"></m-menu>
           </slot>
@@ -63,7 +63,7 @@
     <div class="m-page-content">
       <div class="m-page-bookmark">
         <slot name="bookmark">
-          <m-bookmark v-model="data.bookmark"></m-bookmark>
+          <m-bookmark v-if="data.bookmark" v-model="data.bookmark"></m-bookmark>
         </slot>
       </div>
       <div class="m-page-scroll">
