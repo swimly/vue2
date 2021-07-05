@@ -23,19 +23,23 @@ export default {
   },
   methods: {
     onvalueChange (v) {
-      v ? this.open() : this.close()
+      if (v) {
+        this.el.style.display = 'block'
+        setTimeout(() => {
+          this.el.setAttribute('visible', 'true')
+        }, 30)
+      } else {
+        this.el.removeAttribute('visible')
+        setTimeout(() => {
+          document.body.removeChild(this.el)
+        }, 300)
+      }
     },
     open () {
-      this.el.style.display = 'block'
-      setTimeout(() => {
-        this.el.setAttribute('visible', 'true')
-      }, 10)
+      this.visible = true
     },
     close () {
-      this.el.removeAttribute('visible')
-      setTimeout(() => {
-        document.body.removeChild(this.$el)
-      }, 300)
+      this.visible = false
     }
   },
   watch: {

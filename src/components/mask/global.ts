@@ -1,9 +1,22 @@
 import Vue from 'vue'
-import Mask from './src/mask.vue'
+import Component from './src/mask.vue'
 
-const constructor = Vue.extend(Mask)
+let Constructor = Vue.extend(Component)
+let instance
 
-const instance = new constructor()
-document.body.appendChild(instance.$mount().$el)
+const show = (options = {}) => {
+  instance = new Constructor({
+    data: options
+  })
+  document.body.appendChild(instance.$mount().$el)
+  instance.open()
+}
 
-export default instance
+const hide = () => {
+  instance.close()
+}
+
+export default {
+  show,
+  hide
+}

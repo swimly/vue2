@@ -24,11 +24,11 @@
       },
       methods: {
         onshow: function () {
-          var $mask = this.$mask
-          $mask.open()
+          var _this = this
+          this.$mask.show()
           setTimeout(function () {
-            $mask.close()
-          }, 1000)
+            _this.$mask.hide()
+          }, 2000)
         }
       }
     })

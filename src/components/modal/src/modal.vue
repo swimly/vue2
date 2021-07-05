@@ -3,7 +3,6 @@
     class="m-modal"
     :style="modalStyle"
     ref="el"
-    :visible="show"
   >
     <div
       class="m-modal-head"
@@ -14,7 +13,9 @@
         <slot name="title">{{title}}</slot>
       </div>
       <div class="m-modal-append">
-
+        <span>
+          <m-icon @vclick="close" name="close" size="14" cursor="pointer"></m-icon>
+        </span>
       </div>
     </div>
     <div class="m-modal-body" ref="body">
@@ -25,8 +26,13 @@
 </template>
 
 <script>
+import Mask from '../../mask/global'
+import MIcon from '../../icon/src/icon.vue'
 export default {
   name: 'm-modal',
+  components: {
+    MIcon
+  },
   props: {
     title: {
       type: String,
@@ -67,22 +73,35 @@ export default {
   created () {
   },
   methods: {
+    close () {
+      this.show = false
+    },
+    open () {
+      this.show = true
+    },
     onVisibleChange (v) {
+      this.show = v
+    },
+    onShowChange (v) {
       if (v) {
         this.el.style.display = 'block'
         setTimeout(() => {
-          this.show = v
-        }, 10)
+          Mask.show()
+          this.el.setAttribute('visible', 'true')
+        }, 30)
       } else {
-        this.show = v
+        this.el.removeAttribute('visible')
+        Mask.hide()
         setTimeout(() => {
           this.el.style.display = 'none'
         }, 300)
       }
+      this.$emit('update:visible', v)
     }
   },
   watch: {
-    'visible': 'onVisibleChange'
+    'visible': 'onVisibleChange',
+    'show': 'onShowChange'
   }
 }
 </script>

@@ -13,6 +13,8 @@
   transform: translate(-50%, -50%);
   opacity:0;
   margin-top:-40px;
+  z-index:101;
+  border-radius:2px;
   &-head{
     display:table;
     width:100%;
@@ -32,7 +34,13 @@
     font-weight: bold;
   }
   &-append{
-    white-space: nowrap
+    white-space: nowrap;
+    & > span{
+      color: v(text-secondary);
+      &:hover{
+        color: v(color-primary);
+      }
+    }
   }
   &-body{
     height: 100%;
