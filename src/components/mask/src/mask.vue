@@ -2,6 +2,7 @@
   <div
     class="m-mask"
     ref="el"
+    @click="onClick"
   >
     <slot></slot>
   </div>
@@ -40,6 +41,9 @@ export default {
     },
     close () {
       this.visible = false
+    },
+    onClick (e) {
+      this.$emit('click', e)
     }
   },
   watch: {

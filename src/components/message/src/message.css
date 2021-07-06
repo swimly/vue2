@@ -1,0 +1,34 @@
+.m-message{
+  display:inline-block;
+  background-color:v(background-white);
+  box-shadow: 0 4px 12px v(shadow-default);
+  font-size: 0;
+  padding: 8px 16px;
+  line-height: 1.6;
+  display:none;
+  opacity:0;
+  transition:0.3s;
+  border-radius:4px;
+  transform: translate(0, -8px);
+  &-label{
+    display:inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    margin-left: 8px;
+    color: v(text-default);
+    line-height: inherit;
+  }
+  &[visible]{
+    opacity:1;
+    transform: translate(0, 0);
+  }
+  &-group{
+    position:fixed;
+    top:5%;
+    left:50%;
+    transform: translateX(-50%);
+  }
+  &-row{
+    padding-bottom:12px;
+  }
+}

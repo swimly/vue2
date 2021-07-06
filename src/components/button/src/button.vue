@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     onClick (e) {
-      this.$emit('vclick', e)
+      this.$emit('click', e)
     }
   },
   created () {

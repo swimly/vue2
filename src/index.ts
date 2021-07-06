@@ -29,10 +29,13 @@ import MParagraph from './components/paragraph'
 import MDivider from './components/divider'
 import MModal from './components/modal'
 import MMask from './components/mask'
+import MMessage from './components/message'
 
 // 全局函数组件
 import Mask from './components/mask/global'
+import Message from './components/message/global'
 Vue.prototype.$mask = Mask
+Vue.prototype.$message = Message
 
 const components = [
   MButton,
@@ -64,7 +67,8 @@ const components = [
   MParagraph,
   MDivider,
   MModal,
-  MMask
+  MMask,
+  MMessage
 ]
 
 const install = function (Vue) {
