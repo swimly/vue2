@@ -1,4 +1,4 @@
-import MButton from './components/button/button.jsx'
+import MButton from './components/button/button'
 
 const components = [
   MButton

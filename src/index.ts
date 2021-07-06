@@ -32,7 +32,7 @@ import MMessage from './components/message'
 
 // 全局函数组件
 import Mask from './components/mask/global'
-import Message from './components/message/global'
+import Message from './components/message/src/global'
 
 const components = [
   MButton,
