@@ -7,10 +7,8 @@ import vue from 'rollup-plugin-vue'
 const postcssConfig = require('./postcss.config')
 import pkg from '../package.json'
 import progress from 'rollup-plugin-progress'
-import image from '@rollup/plugin-image'
 import filesize from 'rollup-plugin-filesize'
 import typescript from 'rollup-plugin-typescript'
-// import css from 'rollup-plugin-css-only'
 import babel from 'rollup-plugin-babel'
 
 export default (name, env) => {
@@ -70,7 +68,6 @@ export default (name, env) => {
           "@babel/preset-typescript"
         ]
       }),
-      image(),
       !isDev && filesize(),
       !isDev && progress({
         clearLine: false
