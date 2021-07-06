@@ -7,6 +7,7 @@ module.exports = (isDev) => {
         path: `./src/themes/${pkg.theme}`,
         files: ['variable.css']
       }),
+      pkg.entry === 'main' && require('postcss-modules')(),
       require('postcss-import')(),
       require('postcss-nested')(),
       pkg.px2rem && require('postcss-pxtorem')({

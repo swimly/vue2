@@ -9,14 +9,19 @@
 </head>
 <body>
   <div id="app">
-    <mc-button type="primary">按钮</mc-button>
+    <m-button @click="onClick" type="primary">按钮</m-button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="../../../dist/mui.js"></script>
   <script>
     Vue.use(MUI)
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        onClick: function (e) {
+          console.log(e)
+        }
+      }
     })
   </script>
 </body>

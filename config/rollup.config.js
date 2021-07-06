@@ -15,7 +15,7 @@ export default (name, env) => {
   const isEntry = name === pkg.ui
   const isDev = env === 'dev'
   const root = isEntry ? './src/' : './src/components/'
-  const input = isEntry ? `${root}index.ts` : `${root}${name}/index.ts`
+  const input = isEntry ? `${root}${pkg.entry}.ts` : `${root}${name}/index.ts`
   const outputRoot = isEntry ? './' : `./src/components/${name}/`
   const postcssPlugins = postcssConfig(isDev).plugins
   const formats = ['umd']
@@ -58,7 +58,7 @@ export default (name, env) => {
       babel({
         exclude: [/\/core-js\//],
         runtimeHelpers: true,
-        extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue'],
+        extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue', 'tsx'],
         presets: [
           ["@babel/preset-env", {
             modules: false,

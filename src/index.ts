@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import MButton from './components/button'
 import MRow from './components/row'
 import MCol from './components/col'
@@ -34,8 +33,6 @@ import MMessage from './components/message'
 // 全局函数组件
 import Mask from './components/mask/global'
 import Message from './components/message/global'
-Vue.prototype.$mask = Mask
-Vue.prototype.$message = Message
 
 const components = [
   MButton,
@@ -75,6 +72,8 @@ const install = function (Vue) {
   components.forEach(com => {
     Vue.component(com.name, com)
   })
+  Vue.prototype.$mask = Mask
+  Vue.prototype.$message = Message
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
